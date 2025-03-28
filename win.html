@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Win!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .message {
+      text-align: center;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 64px;
+      color: #fff;
+      text-shadow: 0 0 15px #00ffe5, 0 0 30px #00ffe5;
+      animation: glow 2s infinite alternate;
+    }
+
+    p {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #ccc;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #00ffe5;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffe5, 0 0 30px #00ffe5;
+      }
+    }
+
+    /* Decorative animated background using ::before and ::after */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: spin 15s linear infinite;
+      border-radius: 50%;
+      filter: blur(50px);
+    }
+
+    body::before {
+      top: -100px;
+      left: -100px;
+    }
+
+    body::after {
+      bottom: -100px;
+      right: -100px;
+      animation-direction: reverse;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      100% {
+        transform: rotate(360deg) scale(1.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h1>🎉 You Win! 🎉</h1>
+    <p>Congratulations, you've escaped the dark trap! <br> Wait tune for part 2!!</p>
+  </div>
+</body>
+</html>
